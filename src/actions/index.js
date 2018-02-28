@@ -1,3 +1,8 @@
+export const openFeedbackTree = (attendee_name) => ({
+  type: 'OPEN_FEEDBACK_TREE',
+  attendee_name
+})
+
 let nextTodoId = 0
 export const addTodo = (text) => ({
   type: 'ADD_TODO',

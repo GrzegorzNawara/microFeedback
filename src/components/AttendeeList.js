@@ -1,26 +1,34 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Attendee from './Attendee'
+import { openFeedbackTree } from '../actions'
+import { connect } from 'react-redux'
 
-const AttendeeList = ({ todos, onTodoClick }) => (
+const mapStateToProps = (state) => ({
+  attendees: state.attendees
+})
+
+const mapDispatchToProps = {
+  onAttendeeListClick: openFeedbackTree
+}
+
+const AttendeeList = ({ attendees, onAttendeeListClick }) => (
   <ul>
-    {todos.map(todo =>
-      <Attendee
-        key={todo.id}
-        {...todo}
-        onClick={() => onTodoClick(todo.id)}
-      />
+    {attendees.map(attendee =>
+      <li
+        key={attendee.id}
+        onClick={() => onAttendeeListClick(attendee.id)}>
+        {attendee.name}
+      </li>
     )}
   </ul>
 )
 
 AttendeeList.propTypes = {
-  todos: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    completed: PropTypes.bool.isRequired,
-    text: PropTypes.string.isRequired
+  attendees: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
   }).isRequired).isRequired,
-  onTodoClick: PropTypes.func.isRequired
+  onAttendeeListClick: PropTypes.func.isRequired
 }
 
-export default AttendeeList
+export default connect(mapStateToProps, mapDispatchToProps)(AttendeeList)
