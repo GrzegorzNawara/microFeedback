@@ -1,27 +1,20 @@
-export const openFeedbackTree = (attendee_name) => ({
-  type: 'OPEN_FEEDBACK_TREE',
-  attendee_name
+export const addAttendee = (attendee) => ({
+  type: 'ADD_ATTENDEE',
+  id: (attendee.id === '') ? 'user_unknown' : attendee.id,
+  name: attendee.name
 })
 
-let nextTodoId = 0
-export const addTodo = (text) => ({
-  type: 'ADD_TODO',
-  id: nextTodoId++,
-  text
+export const addSkill = (skill) => ({
+  type: 'ADD_SKILL',
+  ...skill
 })
 
-export const setVisibilityFilter = (filter) => ({
-  type: 'SET_VISIBILITY_FILTER',
-  filter
+export const addFeedback = (feedback) => ({
+  type: 'ADD_FEEDBACK',
+  ...feedback
 })
 
-export const toggleTodo = (id) => ({
-  type: 'TOGGLE_TODO',
-  id
+export const chooseArea = (area='') => ({
+  type: 'CHOOSE_AREA',
+  area
 })
-
-export const VisibilityFilters = {
-  SHOW_ALL: 'SHOW_ALL',
-  SHOW_COMPLETED: 'SHOW_COMPLETED',
-  SHOW_ACTIVE: 'SHOW_ACTIVE'
-}

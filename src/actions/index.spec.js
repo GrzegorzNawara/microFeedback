@@ -1,25 +1,49 @@
 import * as actions from './index'
 
-describe('todo actions', () => {
-  it('addTodo should create ADD_TODO action', () => {
-    expect(actions.addTodo('Use Redux')).toEqual({
-      type: 'ADD_TODO',
-      id: 0,
-      text: 'Use Redux'
+
+// ADD_ATTENDEE
+describe('add attendee action', () => {
+
+  it('addAttendee should create ADD_ATTENDEE action', () => {
+    expect(actions.addAttendee({id: 'user12345', name: 'John Doe'})).toEqual({
+      type: 'ADD_ATTENDEE',
+      id: 'user12345',
+      name: 'John Doe'
     })
   })
 
-  it('setVisibilityFilter should create SET_VISIBILITY_FILTER action', () => {
-    expect(actions.setVisibilityFilter('active')).toEqual({
-      type: 'SET_VISIBILITY_FILTER',
-      filter: 'active'
-    })
-  })
-
-  it('toggleTodo should create TOGGLE_TODO action', () => {
-    expect(actions.toggleTodo(1)).toEqual({
-      type: 'TOGGLE_TODO',
-      id: 1
+  it('empty id should not create anything', () => {
+    expect(actions.addAttendee({id: '', name: 'John Doe'})).toEqual({
+      type: 'ADD_ATTENDEE',
+      id: 'user_unknown',
+      name: 'John Doe'
     })
   })
 })
+// ADD_ATTENDEE
+
+
+
+// ADD FEEDBACK
+describe('add feedback item', () => {
+
+  it('addFeedback should create ADD_FEEDBACK action', () => {
+    expect(actions.addFeedback({
+      area: 'Współpraca',
+      id: 'analiza-sytuacji',
+      skill: 'Analiza sytuacji',
+      level0: 'Warto rozwinąć ten obszar',
+      level1: 'Dobrze rozwinięta umiejętność',
+      level2: 'Warto stonować ten obszar'
+    })).toEqual({
+      type: 'ADD_FEEDBACK',
+      area: 'Współpraca',
+      id: 'analiza-sytuacji',
+      skill: 'Analiza sytuacji',
+      level0: 'Warto rozwinąć ten obszar',
+      level1: 'Dobrze rozwinięta umiejętność',
+      level2: 'Warto stonować ten obszar'
+    })
+  })
+})
+// ADD FEEDBACK

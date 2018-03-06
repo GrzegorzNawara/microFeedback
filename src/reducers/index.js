@@ -1,12 +1,10 @@
 import { combineReducers } from 'redux'
 import attendees from './attendees'
-import todos from './todos'
-import visibilityFilter from './visibilityFilter'
+import skills from './skills'
 
-const todoApp = combineReducers({
-  attendees,
-  todos,
-  visibilityFilter
+const microfeedbackApp = combineReducers({
+  attendees_array: attendees,
+  skills_array: skills
 })
 
-export default todoApp
+export default microfeedbackApp
