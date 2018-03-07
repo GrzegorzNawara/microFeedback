@@ -1,15 +1,15 @@
 import React from 'react'
 import ListItem from './ListItem'
 
-const List = ({list_items}) => (
+const List = ({items, onClick}) => (
   <div className="container">
-    {list_items.map( list_item =>
-      <ListItem
-        key={list_item.key}
-        title={list_item.title}
-        subtitle={list_item.subtitle}
-        onListItemClick={list_item.onListItemClick}
-      />
+    {items.map( item =>
+        <ListItem
+          key={item.key}
+          title={item.title}
+          subtitle={item.subtitle}
+          onClick={() => onClick(item)}
+        />
     )}
   </div>
 )

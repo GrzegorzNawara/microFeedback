@@ -14,7 +14,22 @@ export const addFeedback = (feedback) => ({
   ...feedback
 })
 
+export const chooseAttendee = (attendee='') => ({
+  type: 'CHOOSE_ATTENDEE',
+  ...attendee
+})
+
 export const chooseArea = (area='') => ({
   type: 'CHOOSE_AREA',
-  area
+  ...area
+})
+
+export const chooseSkill = (skill='') => ({
+  type: 'CHOOSE_SKILL',
+  ...skill
+})
+
+export const chooseLevel = (level='') => ({
+  type: 'CHOOSE_LEVEL',
+  ...level
 })

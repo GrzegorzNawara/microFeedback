@@ -1,18 +1,21 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import List from '../components/List'
-import { chooseArea } from '../actions'
+import { chooseSkill } from '../actions'
 
 const mapStateToProps = (state) => ({
-  list_items: state.skills_array.map( (skill) => ({
+  items: state.skills_array
+    .filter( (skill) => skill.area === state.choice.area )
+    .map( (skill) => ({
       key: skill.id,
-      title: skill.area,
-      subtitle: skill.name,
-      onListItemClick: () => ( alert(skill.area) )
-  }))
+      title: skill.name,
+      subtitle: skill.area,
+      skill: skill
+    }))
 })
 
 const mapDispatchToProps = {
+  onClick: chooseSkill
 }
 
 const SkillList = connect(

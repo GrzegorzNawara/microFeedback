@@ -14,7 +14,7 @@ const initialState = {
   feedbacks_array: [],
 
   // state
-  choosen: {attendee: {}, area: '', skill: ''}
+  choice: {attendee: {}, area: '', skill: {}, level: -1}
 };
 
 const store = createStore(
@@ -39,8 +39,26 @@ store.dispatch(addAttendee({id:'user023', name:'Karol #256'}));
 store.dispatch(addSkill({
   area: 'Współpraca',
   id: 'analiza-sytuacji',
-  skill: 'Analiza sytuacji',
-  level0: 'Warto rozwinąć ten obszar',
-  level1: 'Dobrze rozwinięta umiejętność',
-  level2: 'Warto stonować ten obszar'
+  name: 'Analiza sytuacji',
+  level0: 'Warto rozwinąć ten obszar. Analiza sytuacji',
+  level1: 'Dobrze rozwinięta umiejętność. Analiza sytuacji',
+  level2: 'Warto stonować ten obszar. Analiza sytuacji'
+}));
+
+store.dispatch(addSkill({
+  area: 'Współpraca',
+  id: 'big-picture',
+  name: 'Big Picture',
+  level0: 'Warto rozwinąć ten obszar. Big Picture',
+  level1: 'Dobrze rozwinięta umiejętność. Big Picture',
+  level2: 'Warto stonować ten obszar. Big Picture'
+}));
+
+store.dispatch(addSkill({
+  area: 'Przywództwo',
+  id: 'troska',
+  name: 'Troska o innych',
+  level0: 'Warto rozwinąć ten obszar. Troska',
+  level1: 'Dobrze rozwinięta umiejętność. Troska',
+  level2: 'Warto stonować ten obszar. Troska'
 }));

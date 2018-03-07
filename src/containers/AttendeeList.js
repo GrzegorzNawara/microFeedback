@@ -1,17 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import List from '../components/List'
+import { chooseAttendee } from '../actions'
 
 const mapStateToProps = (state) => ({
-  list_items: state.attendees_array.map( (attendee) => ({
+  items: state.attendees_array.map( (attendee) => ({
       key: attendee.id,
       title: attendee.name,
       subtitle: attendee.id,
-      onListItemClick: () => ( alert(attendee.name) )
+      attendee: attendee
   }))
 })
 
 const mapDispatchToProps = {
+  onClick: chooseAttendee
 }
 
 const AttendeeList = connect(
