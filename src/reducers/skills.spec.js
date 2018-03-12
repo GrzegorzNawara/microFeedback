@@ -30,7 +30,7 @@ describe('skill reducer hahaha', () => {
     ])
 
     expect(
-      names([
+      skills([
         {
           area: 'Współpraca',
           id: 'analiza-sytuacji-1',

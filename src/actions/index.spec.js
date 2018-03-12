@@ -24,11 +24,11 @@ describe('add attendee action', () => {
 
 
 
-// ADD FEEDBACK
-describe('add feedback item', () => {
+// ADD SKILL
+describe('add skill item', () => {
 
-  it('addFeedback should create ADD_FEEDBACK action', () => {
-    expect(actions.addFeedback({
+  it('addSkill should create ADD_SKILL action', () => {
+    expect(actions.addSkill({
       area: 'Współpraca',
       id: 'analiza-sytuacji',
       skill: 'Analiza sytuacji',
@@ -36,7 +36,7 @@ describe('add feedback item', () => {
       level1: 'Dobrze rozwinięta umiejętność',
       level2: 'Warto stonować ten obszar'
     })).toEqual({
-      type: 'ADD_FEEDBACK',
+      type: 'ADD_SKILL',
       area: 'Współpraca',
       id: 'analiza-sytuacji',
       skill: 'Analiza sytuacji',

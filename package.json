@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "ajv": "^6.2.0",
+    "cross-fetch": "^2.1.0",
     "prop-types": "^15.6.1",
     "react": "^15.6.2",
     "react-dom": "^15.5.0",

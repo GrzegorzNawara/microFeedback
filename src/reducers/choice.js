@@ -1,6 +1,6 @@
 import debug from '../include/debug'
 
-const choice = (state = [], action) => {
+const choice = (state = {}, action) => {
   switch (action.type) {
     case 'CHOOSE_ATTENDEE':
       return (
