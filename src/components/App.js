@@ -1,20 +1,20 @@
 import React from 'react'
 import NavBar from './NavBar'
 import AttendeeList from '../containers/AttendeeList'
-import AreaList from '../containers/AreaList'
-import SkillList from '../containers/SkillList'
-import LevelList from '../containers/LevelList'
+import FeedbackModal from '../containers/FeedbackModal'
 
 const App = () => (
   <div>
+
     <NavBar />
-    <AttendeeList />
-    <hr />
-    <AreaList />
-    <hr />
-    <SkillList />
-    <hr />
-    <LevelList />
+    <FeedbackModal />
+
+    <div className="container">
+      <div className="row">
+        <AttendeeList />
+      </div>
+    </div>
+
   </div>
 )
 

@@ -1,4 +1,3 @@
-import React from 'react'
 import { connect } from 'react-redux'
 import List from '../components/List'
 import { chooseArea } from '../actions'
@@ -19,10 +18,11 @@ function getUniqueAreaArray (skills_array) {
 }
 
 const mapStateToProps = (state) => ({
+  visible: state.choice.show_list === 'SHOW_AREA',
   items: getUniqueAreaArray(state.skills_array.filter(() => state.choice.attendee.name!==undefined )).map( (skill) => ({
       key: skill.id,
       title: skill.area,
-      subtitle: '',
+      subtitle: [],
       area: skill.area
   }))
 })

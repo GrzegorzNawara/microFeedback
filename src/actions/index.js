@@ -1,3 +1,5 @@
+import debug from '../include/debug'
+
 export const addAttendee = (attendee) => ({
   type: 'ADD_ATTENDEE',
   id: (attendee.id === '') ? 'user_unknown' : attendee.id,
@@ -11,7 +13,10 @@ export const addSkill = (skill) => ({
 
 export const addFeedback = (feedback) => ({
   type: 'ADD_FEEDBACK',
-  ...feedback
+  ...debug(feedback,
+    'wrong feedback',
+    feedback.attendee_id.length>0 && feedback.skill_id.length>0
+  )
 })
 
 export const chooseAttendee = (attendee='') => ({
@@ -32,4 +37,8 @@ export const chooseSkill = (skill='') => ({
 export const chooseLevel = (level='') => ({
   type: 'CHOOSE_LEVEL',
   ...level
+})
+
+export const resetChoice = () => ({
+  type: 'RESET_CHOICE'
 })

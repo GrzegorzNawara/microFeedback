@@ -6,6 +6,7 @@ import reducer from './reducers'
 import App from './components/App'
 import { addAttendee } from './actions'
 import { addSkill } from './actions'
+import { addFeedback } from './actions'
 
 const initialState = {
   // data
@@ -14,7 +15,7 @@ const initialState = {
   feedbacks_array: [],
 
   // state
-  choice: {attendee: {}, area: '', skill: {}, level: -1}
+  choice: {attendee: {}, area: '', skill: {}, level: -1, show_list: 'SHOW_NONE'}
 };
 
 const store = createStore(
@@ -62,3 +63,6 @@ store.dispatch(addSkill({
   level1: 'Dobrze rozwinięta umiejętność. Troska',
   level2: 'Warto stonować ten obszar. Troska'
 }));
+
+store.dispatch(addFeedback({attendee_id:'user665', skill_id:'analiza-sytuacji', level:1}));
+store.dispatch(addFeedback({attendee_id:'user023', skill_id:'big-picture', level:1}));
