@@ -10,9 +10,7 @@ const App = () => (
     <FeedbackModal />
 
     <div className="container">
-      <div className="row">
-        <AttendeeList />
-      </div>
+      <AttendeeList />
     </div>
 
   </div>

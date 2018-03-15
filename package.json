@@ -2,6 +2,7 @@
   "name": "microfeedback",
   "version": "0.0.1",
   "private": true,
+  "homepage" : "http://abcportal.eu/microfeedback",
   "devDependencies": {
     "enzyme": "^2.8.2",
     "react-addons-test-utils": "^15.5.1",
