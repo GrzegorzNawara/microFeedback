@@ -1,7 +1,6 @@
 function debug (expression, comment='', hide=false) {
 
   if(!hide) {
-
     console.error(comment + ': %o', expression);
   }
 

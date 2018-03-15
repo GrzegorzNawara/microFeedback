@@ -3,7 +3,7 @@ import ListItem from './ListItem'
 import debug from '../include/debug'
 
 const List = ({visible=true, items, onClick}) => (
-  <div className="">
+  <div className="row">
     {visible && items.map( item =>
         <ListItem
           key={item.key}

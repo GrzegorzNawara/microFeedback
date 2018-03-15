@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from './NavBar'
-import AttendeeList from '../containers/AttendeeList'
-import FeedbackModal from '../containers/FeedbackModal'
+import AttendeeList from '../connectors/AttendeeList'
+import FeedbackModal from '../connectors/FeedbackModal'
 
 const App = () => (
   <div>
